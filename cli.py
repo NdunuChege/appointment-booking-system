@@ -153,7 +153,7 @@ def main_menu():
             print("Adios Muchacho!")
             break
         else:
-            print("Invalid option. Please try again.")
+            print("Please try again.")
 
 if __name__ == "__main__":
     main_menu()
