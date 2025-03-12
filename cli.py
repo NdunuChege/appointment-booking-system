@@ -118,13 +118,13 @@ def main_menu():
     """Interactive Main Menu for the CLI."""
     while True:
         print("\nDentist Appointment Manager")
-        print("1. Create a Patient")
-        print("2. View Patients")
+        print("1. Add a Patient")
+        print("2. View  Patients")
         print("3. Delete a Patient")
-        print("4. Create a Dentist")
+        print("4. Add a Dentist")
         print("5. View Dentists")
         print("6. Delete a Dentist")
-        print("7. Create an Appointment")
+        print("7. Add an Appointment")
         print("8. View Appointments")
         print("9. Delete an Appointment")
         print("0. Exit")
