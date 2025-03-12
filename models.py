@@ -4,6 +4,10 @@ from models.patient import Patient # type: ignore
 from models.dentist import Dentist # type: ignore
 from models.appointment import Appointment # type: ignore
 
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
+
 # Initialize the database
 init_db()
 
@@ -152,6 +156,8 @@ def delete_appointment():
         click.echo(f"Error: {e}")
     finally:
         session.close()
+
+from models import Base
 
 # --- RUN THE CLI ---
 if __name__ == "__main__":
