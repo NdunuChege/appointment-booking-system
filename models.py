@@ -115,9 +115,10 @@ def create_appointment():
         dentist_id = int(input("Enter dentist ID: "))
         date = input("Enter appointment date (YYYY-MM-DD): ")
         time = input("Enter appointment time (HH:MM AM/PM): ")
+        status = 'Booked'
 
-        Appointment.create(session, patient_id=patient_id, dentist_id=dentist_id, date=date, time=time)
-        click.echo("Appointment created successfully!")
+        Appointment.create(session, patient_id=patient_id, dentist_id=dentist_id, date=date, time=time, status=status)
+        click.echo("Appointment booked successfully!")
     except Exception as e:
         click.echo(f"Error: {e}")
     finally:

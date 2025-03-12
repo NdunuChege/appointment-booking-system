@@ -9,11 +9,11 @@ class Appointment(Base):
     dentist_id = Column(Integer)
     date = Column(DateTime)
     time = Column(String)
-    status = Column(String, default='scheduled')
+    status = Column(String, default = 'Booked')
 
     @classmethod
     def create(cls, session, patient_id, dentist_id, date, time):
-        appointment = cls(patient_id=patient_id, dentist_id=dentist_id, date=date, time=time)
+        appointment = cls(patient_id=patient_id, dentist_id=dentist_id, date=date, time=str(time), status='Booked')
         session.add(appointment)
         session.commit()
         session.refresh(appointment)

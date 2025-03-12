@@ -4,6 +4,7 @@ from models.patient import Patient
 from models.dentist import Dentist
 from models.appointment import Appointment
 
+
 # Initialize the database at the start
 init_db()
 
@@ -78,13 +79,20 @@ def delete_dentist():
     else:
         print("Dentist not found.")
 
+from datetime import datetime
+
 def create_appointment():
     """Create a new appointment."""
     session = SessionLocal()
     patient_id = int(input("Enter patient ID: "))
     dentist_id = int(input("Enter dentist ID: "))
-    date = input("Enter appointment date (YYYY-MM-DD): ")
-    time = input("Enter appointment time (HH:MM AM/PM): ")
+    date_str = input("Enter appointment date (YYYY-MM-DD): ")
+    time_str = input("Enter appointment time (HH:MM AM/PM): ")
+    
+    # Convert date and time strings to datetime objects
+    date = datetime.strptime(date_str, '%Y-%m-%d').date()
+    time = datetime.strptime(time_str, '%I:%M %p').time()
+    status = 'Booked'
 
     try:
         Appointment.create(session, patient_id=patient_id, dentist_id=dentist_id, date=date, time=time)
