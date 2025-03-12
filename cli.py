@@ -150,7 +150,7 @@ def main_menu():
         elif choice == "9":
             delete_appointment()
         elif choice == "0":
-            print("Goodbye!")
+            print("Adios Muchacho!")
             break
         else:
             print("Invalid option. Please try again.")
