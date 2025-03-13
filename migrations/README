@@ -1,1 +1,16 @@
-Generic single-database configuration.
+# Project Overview
+This project is designed to manage appointments for a dental practice, allowing for the scheduling and management of patient appointments with dentists.
+
+# Database Configuration
+The project uses SQLite as the database for storing appointment data. The database file is named `elephant_appointments.db`.
+
+# Alembic Migrations
+Alembic is used for managing database migrations. To create a new migration, use the following command:
+```
+alembic revision --autogenerate -m "your migration message"
+```
+To apply the migrations, run:
+```
+alembic upgrade head
+```
+If you encounter issues with missing revisions, ensure that the migration history is correctly set up in the `migrations/versions/` directory.
