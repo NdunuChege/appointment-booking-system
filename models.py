@@ -122,7 +122,7 @@ def create_appointment():
         status = 'Booked'
 
         Appointment.create(session, patient_id=patient_id, dentist_id=dentist_id, date=date, time=time, status=status)
-        click.echo("Appointment booked successfully!")
+        click.echo("Your appointment was booked successfully!")
     except Exception as e:
         click.echo(f"Error: {e}")
     finally:
@@ -149,9 +149,9 @@ def delete_appointment():
 
         if appointment:
             appointment.delete(session)
-            click.echo("Appointment deleted successfully!")
+            click.echo("Your appointment was deleted successfully!")
         else:
-            click.echo("Appointment not found.")
+            click.echo("No such appointment.")
     except Exception as e:
         click.echo(f"Error: {e}")
     finally:
