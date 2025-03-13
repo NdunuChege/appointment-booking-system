@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String
 from database.config import Base
+from models import Base
 
 class Dentist(Base):
     __tablename__ = 'dentists'

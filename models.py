@@ -4,6 +4,7 @@ from models.patient import Patient # type: ignore
 from models.dentist import Dentist # type: ignore
 from models.appointment import Appointment # type: ignore
 
+
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
