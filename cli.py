@@ -9,7 +9,7 @@ from models.appointment import Appointment
 init_db()
 
 def create_patient():
-    """Create a new patient."""
+
     session = SessionLocal()
     name = input("Enter patient name: ")
     contact_info = input("Enter patient email: ")
@@ -23,7 +23,7 @@ def create_patient():
         print(f"Error: {e}")
 
 def view_patients():
-    """View all patients."""
+    
     session = SessionLocal()
     patients = session.query(Patient).all()
     if patients:
@@ -33,7 +33,7 @@ def view_patients():
         print("No patients found.")
 
 def delete_patient():
-    """Delete a patient."""
+
     session = SessionLocal()
     patient_id = int(input("Enter patient ID to delete: "))
     patient = session.query(Patient).filter_by(id=patient_id).first()
@@ -45,7 +45,7 @@ def delete_patient():
         print("Patient not found.")
 
 def create_dentist():
-    """Create a new dentist."""
+    
     session = SessionLocal()
     name = input("Enter dentist name: ")
     specialty = input("Enter dentist specialty: ")
@@ -58,7 +58,7 @@ def create_dentist():
         print(f"Error: {e}")
 
 def view_dentists():
-    """View all dentists."""
+    
     session = SessionLocal()
     dentists = session.query(Dentist).all()
     if dentists:
@@ -68,7 +68,7 @@ def view_dentists():
         print("No dentists found.")
 
 def delete_dentist():
-    """Delete a dentist."""
+    
     session = SessionLocal()
     dentist_id = int(input("Enter dentist ID to delete: "))
     dentist = session.query(Dentist).filter_by(id=dentist_id).first()
@@ -82,14 +82,14 @@ def delete_dentist():
 from datetime import datetime
 
 def create_appointment():
-    """Create a new appointment."""
+    
     session = SessionLocal()
     patient_id = int(input("Enter patient ID: "))
     dentist_id = int(input("Enter dentist ID: "))
     date_str = input("Enter appointment date (YYYY-MM-DD): ")
     time_str = input("Enter appointment time (HH:MM AM/PM): ")
     
-    # Convert date and time strings to datetime objects
+    
     date = datetime.strptime(date_str, '%Y-%m-%d').date()
     time = datetime.strptime(time_str, '%I:%M %p').time()
     status = 'Booked'
@@ -101,7 +101,7 @@ def create_appointment():
         print(f"Error: {e}")
 
 def view_appointments():
-    """View all appointments."""
+    
     session = SessionLocal()
     appointments = session.query(Appointment).all()
     if appointments:
@@ -111,7 +111,7 @@ def view_appointments():
         print("No appointments found.")
 
 def delete_appointment():
-    """Delete an appointment."""
+    
     session = SessionLocal()
     appointment_id = int(input("Enter appointment ID to delete: "))
     appointment = session.query(Appointment).filter_by(id=appointment_id).first()
@@ -123,7 +123,7 @@ def delete_appointment():
         print("Appointment not found.")
 
 def main_menu():
-    """Interactive Main Menu for the CLI."""
+    
     while True:
         print("\nDentist Appointment Manager")
         print("1. Add a Patient")

@@ -9,7 +9,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-# Initialize the database
+
 init_db()
 
 @click.group()
@@ -17,10 +17,10 @@ def cli():
     """CLI for managing patients, dentists, and appointments."""
     pass
 
-# --- PATIENT COMMANDS ---
+
 @cli.command()
 def create_patient():
-    """Create a new patient."""
+    
     session = SessionLocal()
     try:
         name = input("Enter patient name: ")
@@ -37,7 +37,7 @@ def create_patient():
 
 @cli.command()
 def view_patients():
-    """View all patients."""
+    
     session = SessionLocal()
     try:
         patients = Patient.get_all(session)
@@ -48,7 +48,7 @@ def view_patients():
 
 @cli.command()
 def delete_patient():
-    """Delete a patient."""
+    
     session = SessionLocal()
     try:
         patient_id = int(input("Enter patient ID to delete: "))
@@ -64,10 +64,10 @@ def delete_patient():
     finally:
         session.close()
 
-# --- DENTIST COMMANDS ---
+
 @cli.command()
 def create_dentist():
-    """Create a new dentist."""
+    
     session = SessionLocal()
     try:
         name = input("Enter dentist name: ")
@@ -83,7 +83,7 @@ def create_dentist():
 
 @cli.command()
 def view_dentists():
-    """View all dentists."""
+    
     session = SessionLocal()
     try:
         dentists = Dentist.get_all(session)
@@ -94,7 +94,7 @@ def view_dentists():
 
 @cli.command()
 def delete_dentist():
-    """Delete a dentist."""
+    
     session = SessionLocal()
     try:
         dentist_id = int(input("Enter dentist ID to delete: "))
@@ -110,10 +110,10 @@ def delete_dentist():
     finally:
         session.close()
 
-# --- APPOINTMENT COMMANDS ---
+
 @cli.command()
 def create_appointment():
-    """Create a new appointment."""
+    
     session = SessionLocal()
     try:
         patient_id = int(input("Enter patient ID: "))
@@ -131,7 +131,7 @@ def create_appointment():
 
 @cli.command()
 def view_appointments():
-    """View all appointments."""
+    
     session = SessionLocal()
     try:
         appointments = Appointment.get_all(session)
@@ -142,7 +142,7 @@ def view_appointments():
 
 @cli.command()
 def delete_appointment():
-    """Delete an appointment."""
+    
     session = SessionLocal()
     try:
         appointment_id = int(input("Enter appointment ID to delete: "))
@@ -160,6 +160,6 @@ def delete_appointment():
 
 from models import Base
 
-# --- RUN THE CLI ---
+
 if __name__ == "__main__":
     cli()
