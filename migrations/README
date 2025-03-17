@@ -1,16 +1,124 @@
-# Project Overview
-This project is designed to manage appointments for a dental practice, allowing for the scheduling and management of patient appointments with dentists.
+Dentist Appointment Management System
 
-# Database Configuration
-The project uses SQLite as the database for storing appointment data. The database file is named `elephant_appointments.db`.
+Overview
 
-# Alembic Migrations
-Alembic is used for managing database migrations. To create a new migration, use the following command:
-```
-alembic revision --autogenerate -m "your migration message"
-```
-To apply the migrations, run:
-```
+This project is a Dentist Appointment Management System built using Python, SQLAlchemy, and SQLite. It allows users to manage patients, dentists, and appointments using a command-line interface.
+
+Features
+
+Add, view, and delete Patients
+
+Add, view, and delete Dentists
+
+Create, view, and delete Appointments
+
+Uses SQLAlchemy ORM for database management
+
+Supports Alembic migrations for database schema updates
+
+Command-line interface using Click
+
+Technologies Used
+
+Python (CLI and database interaction)
+
+SQLAlchemy (ORM for database management)
+
+SQLite (Lightweight database for data storage)
+
+Click (Command-line interface framework)
+
+Alembic (Database migrations)
+
+Setup Instructions
+
+Prerequisites
+
+Make sure you have Python installed (version 3.7 or higher). You can check by running:
+
+python --version
+
+Installation
+
+Clone the Repository
+
+git clone https://github.com/your-username/dentist-appointment-system.git
+cd dentist-appointment-system
+
+Create a Virtual Environment (optional but recommended)
+
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+
+Install Dependencies
+
+pip install -r requirements.txt
+
+Initialize the Database
+
+python -c 'from database.config import init_db; init_db()'
+
+Run Alembic Migrations
+
 alembic upgrade head
-```
-If you encounter issues with missing revisions, ensure that the migration history is correctly set up in the `migrations/versions/` directory.
+
+Usage
+
+Running the CLI
+
+To interact with the system, use the CLI commands:
+
+Start the CLI
+
+python main.py
+
+Available Commands
+| Command | Description |
+|---------|-------------|
+| create-patient | Add a new patient |
+| view-patients | View all patients |
+| delete-patient | Delete a patient |
+| create-dentist | Add a new dentist |
+| view-dentists | View all dentists |
+| delete-dentist | Delete a dentist |
+| create-appointment | Schedule an appointment |
+| view-appointments | View all appointments |
+| delete-appointment | Cancel an appointment |
+
+Example:
+
+python main.py create-patient
+
+Project Structure
+
+├── database/
+│   ├── config.py        # Database setup and initialization
+│   ├── __init__.py      # Package initialization
+│
+├── models/
+│   ├── patient.py       # Patient model
+│   ├── dentist.py       # Dentist model
+│   ├── appointment.py   # Appointment model
+│   ├── __init__.py      # Import all models
+│
+├── migrations/          # Alembic migration scripts
+│
+├── main.py              # CLI interface
+├── requirements.txt     # Dependencies list
+├── README.md            # Documentation
+
+Database Schema
+
+Patients (id, name, contact_info, age, gender)
+
+Dentists (id, name, specialty, contact_info)
+
+Appointments (id, patient_id, dentist_id, date, time, status)
+
+Contributing
+
+Feel free to fork this repository and contribute to improving the system. Pull requests are welcome!
+
+License
+
+This project is licensed under the MIT License.
