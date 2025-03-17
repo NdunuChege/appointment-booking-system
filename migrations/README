@@ -1,10 +1,10 @@
-Dentist Appointment Management System
+DENTIST APPOINTMENT MANAGEMENT SYSTEM
 
-Overview
+OVERVIEW
 
 This project is a Dentist Appointment Management System built using Python, SQLAlchemy, and SQLite. It allows users to manage patients, dentists, and appointments using a command-line interface.
 
-Features
+FEATURES
 
 Add, view, and delete Patients
 
@@ -18,7 +18,7 @@ Supports Alembic migrations for database schema updates
 
 Command-line interface using Click
 
-Technologies Used
+TECHNOLOGIES USED
 
 Python (CLI and database interaction)
 
@@ -30,7 +30,7 @@ Click (Command-line interface framework)
 
 Alembic (Database migrations)
 
-Setup Instructions
+SETUP INSTRUCTIONS
 
 Prerequisites
 
@@ -38,7 +38,7 @@ Make sure you have Python installed (version 3.7 or higher). You can check by ru
 
 python --version
 
-Installation
+INSTALLATIONS
 
 Clone the Repository
 
@@ -50,7 +50,7 @@ Create a Virtual Environment (optional but recommended)
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 
-Install Dependencies
+INSTALL DEPENDANCIES
 
 pip install -r requirements.txt
 
@@ -62,7 +62,7 @@ Run Alembic Migrations
 
 alembic upgrade head
 
-Usage
+USAGE
 
 Running the CLI
 
@@ -89,7 +89,7 @@ Example:
 
 python main.py create-patient
 
-Project Structure
+PROJECT STRUCTURE
 
 ├── database/
 │   ├── config.py        # Database setup and initialization
@@ -107,7 +107,7 @@ Project Structure
 ├── requirements.txt     # Dependencies list
 ├── README.md            # Documentation
 
-Database Schema
+DATABASE SCHEMA
 
 Patients (id, name, contact_info, age, gender)
 
@@ -115,10 +115,10 @@ Dentists (id, name, specialty, contact_info)
 
 Appointments (id, patient_id, dentist_id, date, time, status)
 
-Contributing
+CONTRIBUTING
 
 Feel free to fork this repository and contribute to improving the system. Pull requests are welcome!
 
-License
+LICENSE
 
 This project is licensed under the MIT License.
